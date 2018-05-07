@@ -1,0 +1,35 @@
+version: "2" 
+services: 
+###########################################
+###### Clinical data Workflow        ######
+###########################################
+  data_postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+  rdf_store:
+    image: jvsoest/graphdb-free:8.4.1
+    ports: 
+      - "7200:7200"
+    volumes:
+      - ./graphdb_template/:/opt/graphdb/home/
+  db_converter:
+    image: jvsoest/workflow2
+    links:
+      - data_postgres:dbhost
+      - rdf_store:graphdb
+    volumes:
+      - ./r2rml_config/:/config/
+  garlic:
+    build:
+      context: notebooks
+    ports:
+      - "8888:8888"
+      - "8088:8088"
+    volumes:
+      - ./notebooks:/queries/
+    links:
+      - data_postgres:postgresdb
+      - rdf_store:graphdb
