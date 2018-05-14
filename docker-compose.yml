@@ -33,3 +33,12 @@ services:
     links:
       - data_postgres:postgresdb
       - rdf_store:graphdb
+  oraw:
+    image: jvsoest/oraw
+    volumes:
+      - C:/Users/johan/VARIAN_VATE/:/data/
+    links:
+      - rdf_store:graphdb
+    environment:
+      - RDF4J_URL=http://graphdb:7200
+      - EXCLUDE_STRUCTURE_REGEX="(Patient.*|BODY.*|Body.*|NS.*|Couch.*|Isocenter.*)"
