@@ -30,7 +30,7 @@ The following variables have a specific meaning:
 ###########################################
 # Add patient
 ###########################################
-map:patient a rr:basicQuery;
+map:patient a rr:TriplesMap;
     rr:logicalTable map:basicQuery;
     rr:subjectMap [
         rr:template "patient/{id}";
