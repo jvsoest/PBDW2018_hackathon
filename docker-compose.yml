@@ -15,14 +15,12 @@ services:
       - "7200:7200"
     volumes:
       - ./graphdb_template/:/opt/graphdb/home/
-  db_converter:
-    image: jvsoest/workflow2
+  r2rml:
+    image: jvsoest/r2rml
     links:
       - data_postgres:dbhost
       - rdf_store:graphdb
-    volumes:
-      - ./r2rml_config/:/config/
-  garlic:
+  notebook:
     build:
       context: notebooks
     ports:
