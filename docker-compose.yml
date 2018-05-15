@@ -34,7 +34,7 @@ services:
   oraw:
     image: jvsoest/oraw
     volumes:
-      - ./data/:/data/
+      - ./dicom/:/data/
     links:
       - rdf_store:graphdb
     environment:
