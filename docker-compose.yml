@@ -34,7 +34,7 @@ services:
   oraw:
     image: jvsoest/oraw
     volumes:
-      - C:/Users/johan/VARIAN_VATE/:/data/
+      - ./data/:/data/
     links:
       - rdf_store:graphdb
     environment:
