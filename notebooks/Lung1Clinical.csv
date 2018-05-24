@@ -1,0 +1,11 @@
+PatientID,age,clinical.T.Stage,Clinical.N.Stage,Clinical.M.Stage,Overall.Stage,Histology,gender,Survival.time,deadstatus.event
+LUNG1-001,78.7515,2,3,0,IIIb,large cell,male,2165,1
+LUNG1-002,83.8001,2,0,0,I,squamous cell carcinoma,male,155,1
+LUNG1-003,68.1807,2,3,0,IIIb,large cell,male,256,1
+LUNG1-004,70.8802,2,1,0,II,squamous cell carcinoma,male,141,1
+LUNG1-005,80.4819,4,2,0,IIIb,squamous cell carcinoma,male,353,1
+LUNG1-006,73.8864,3,1,0,IIIa,squamous cell carcinoma,male,173,1
+LUNG1-007,81.5288,2,2,0,IIIa,squamous cell carcinoma,male,137,1
+LUNG1-008,71.666,2,2,0,IIIa,adenocarcinoma,male,77,1
+LUNG1-009,56.1342,2,2,0,IIIa,squamous cell carcinoma,male,131,1
+LUNG1-010,71.0554,4,3,0,IIIb,squamous cell carcinoma,female,2119,0
