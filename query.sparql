@@ -1,0 +1,44 @@
+PREFIX ncit:<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
+PREFIX roo: <http://www.cancerdata.org/roo/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?patient ?age ?sex ?ct ?cn ?survival 
+WHERE { 
+	?patient a ncit:C16960 ;
+     		roo:P100008 _:disease ;
+      		roo:P100311 _:survival ;
+    		roo:P100018 _:sex ;
+       		roo:P100000 _:age. 
+    
+    #Age
+	_:age roo:P100042 ?age.    
+
+    #Survival
+	_:survival a ?survival.
+    ?survival rdfs:subClassOf roo:C100014.
+    FILTER(?survival!=roo:C100014 && !ISBLANK(?survival)).
+        
+    #Sex
+	_:sex a ?sex.
+    ?sex rdfs:subClassOf ncit:C28421.
+    FILTER(?sex!=ncit:C28421 && !ISBLANK(?sex)).
+    
+    #Stage
+    _:disease 	roo:P100025 _:ct ;
+             	roo:P100025 _:cn.
+    
+    #Tstage
+    _:ct a ncit:C48885 ; 
+        	a ?ct.
+    ?ct rdfs:subClassOf ncit:C48885.
+    FILTER(?ct!=ncit:C48885 && !ISBLANK(?ct)).
+    
+    #Nstage
+    _:cn 	a ncit:C48884 ;
+        	a ?cn.
+    ?cn rdfs:subClassOf ncit:C48884.
+    FILTER(?cn!=ncit:C48884 && !ISBLANK(?cn)).
+
+} 
+LIMIT 1000
