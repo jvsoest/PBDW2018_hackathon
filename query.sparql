@@ -3,42 +3,48 @@ PREFIX roo: <http://www.cancerdata.org/roo/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
-SELECT ?patient ?age ?sex ?ct ?cn ?survival 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?patient ?age ?sex ?cT ?cN ?survival 
 WHERE { 
 	?patient a ncit:C16960 ;
-     		roo:P100008 _:disease ;
-      		roo:P100311 _:survival ;
-    		roo:P100018 _:sex ;
-       		roo:P100000 _:age. 
+     		roo:P100008 ?diseaseObj ;
+      		roo:P100311 ?survivalObj ;
+    		roo:P100018 ?sexObj ;
+       		roo:P100000 ?ageObj. 
     
     #Age
-	_:age roo:P100042 ?age.    
+	?ageObj roo:P100042 ?age.    
 
     #Survival
-	_:survival a ?survival.
+	?survivalObj a ?survival.
     ?survival rdfs:subClassOf roo:C100014.
     FILTER(?survival!=roo:C100014 && !ISBLANK(?survival)).
         
     #Sex
-	_:sex a ?sex.
+	{ ?sexObj rdf:type ?sex.
     ?sex rdfs:subClassOf ncit:C28421.
-    FILTER(?sex!=ncit:C28421 && !ISBLANK(?sex)).
+    #FILTER(?sex!=ncit:C28421 && !ISBLANK(?sex)).
+    VALUES (?sex ?sexNumeric) {
+        (ncit:C20197 "1"^^xsd:int )
+        (ncit:C16576 "0"^^xsd:int )
+        } }
+    
     
     #Stage
-    _:disease 	roo:P100025 _:ct ;
-             	roo:P100025 _:cn.
+    ?diseaseObj 	roo:P100025 ?cTObj ;
+             	roo:P100025 ?cNObj.
     
     #Tstage
-    _:ct a ncit:C48885 ; 
-        	a ?ct.
-    ?ct rdfs:subClassOf ncit:C48885.
-    FILTER(?ct!=ncit:C48885 && !ISBLANK(?ct)).
+    ?cTObj a ncit:C48885 ; 
+        	a ?cT.
+    ?cT rdfs:subClassOf ncit:C48885.
+    FILTER(?cT!=ncit:C48885 && !ISBLANK(?cT)).
     
     #Nstage
-    _:cn 	a ncit:C48884 ;
-        	a ?cn.
-    ?cn rdfs:subClassOf ncit:C48884.
-    FILTER(?cn!=ncit:C48884 && !ISBLANK(?cn)).
+    ?cNObj 	a ncit:C48884 ;
+        	a ?cN.
+    ?cN rdfs:subClassOf ncit:C48884.
+    FILTER(?cN!=ncit:C48884 && !ISBLANK(?cN)).
 
 } 
 LIMIT 1000
