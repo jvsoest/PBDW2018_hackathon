@@ -19,6 +19,10 @@ WHERE {
 	?survivalObj a ?survival.
     ?survival rdfs:subClassOf roo:C100014.
     FILTER(?survival!=roo:C100014 && !ISBLANK(?survival)).
+    VALUES (?survival ?survivalNumeric) {
+	    (roo:C000000 "0"^^xsd:int )
+	    (roo:C000001 "1"^^xsd:int )
+    }
         
     #Sex
 	{ ?sexObj rdf:type ?sex.
@@ -39,12 +43,24 @@ WHERE {
         	a ?cT.
     ?cT rdfs:subClassOf ncit:C48885.
     FILTER(?cT!=ncit:C48885 && !ISBLANK(?cT)).
+    VALUES (?cT ?cTNumeric) {
+	    (ncit:C48720 "1"^^xsd:int )
+	    (ncit:C48724 "2"^^xsd:int )
+	    (ncit:C48728 "3"^^xsd:int )
+	    (ncit:C48732 "4"^^xsd:int )
+    }
     
     #Nstage
     ?cNObj 	a ncit:C48884 ;
         	a ?cN.
     ?cN rdfs:subClassOf ncit:C48884.
     FILTER(?cN!=ncit:C48884 && !ISBLANK(?cN)).
+    VALUES (?cN ?cNNumeric) {
+	    (ncit:C48705 "0"^^xsd:int )
+	    (ncit:C48706 "1"^^xsd:int )
+	    (ncit:C48786 "2"^^xsd:int )
+	    (ncit:C48714 "3"^^xsd:int )
+    }
 
 } 
 LIMIT 1000
