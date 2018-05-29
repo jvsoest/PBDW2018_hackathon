@@ -1,0 +1,11 @@
+ID,PatientID,Age,Clinical.T.Stage,Clinical.N.Stage,Clinical.M.Stage,Overall.Ajcc.Stage,Histology,Sex,Survival.Time.Days,deadstatus.event
+43,LUNG1-043,74,2,3,0,IIIb,large_cell,male,183,1
+44,LUNG1-044,50,4,2,0,IIIb,NA,female,170,1
+45,LUNG1-045,73,1,1,0,II,scc,female,1070,1
+46,LUNG1-046,80,2,0,0,I,scc,male,73,1
+47,LUNG1-047,47,2,2,0,IIIa,scc,male,1810,0
+48,LUNG1-048,65,4,0,0,IIIb,large_cell,female,1435,0
+49,LUNG1-049,81,1,0,0,I,large_cell,male,1670,1
+51,LUNG1-051,52,2,0,0,I,nos,male,210,1
+52,LUNG1-052,62,2,2,0,IIIa,adeno,male,73,1
+53,LUNG1-053,79,3,0,0,II,scc,male,78,1
