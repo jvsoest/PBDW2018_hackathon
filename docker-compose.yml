@@ -21,8 +21,7 @@ services:
       - data_postgres:dbhost
       - rdf_store:graphdb
   notebook:
-    build:
-      context: notebooks
+    image: jvsoest/notebook:pbdw
     ports:
       - "8888:8888"
       - "8088:8088"
