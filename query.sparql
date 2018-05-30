@@ -1,16 +1,28 @@
 PREFIX ncit:<http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>
 PREFIX roo: <http://www.cancerdata.org/roo/>
+PREFIX ro: <http://www.radiomics.org/RO/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-SELECT ?patient ?age ?sex ?cT ?cN ?survival 
+SELECT ?patient ?age ?sex ?cT ?cN ?tumorVolumeMM ?survival 
 WHERE { 
 	?patient a ncit:C16960 ;
      		roo:P100008 ?diseaseObj ;
       		roo:P100311 ?survivalObj ;
     		roo:P100018 ?sexObj ;
-       		roo:P100000 ?ageObj. 
+       		roo:P100000 ?ageObj.
+
+    OPTIONAL {
+        ?patient roo:100284 ?struct.
+        ?struct ro:0310 ?imageVolume.
+        ?imageVolume ro:0298 ?imageSpace.
+        ?imageSpace rdf:type roo:100346.
+        ?imageSpace ro:0296 ?featureVolume.
+        ?featureVolume rdf:type ro:1006.
+        ?featureVolume ro:010198 [ rdf:type <http://www.radiomics.org/RO/CubicMillimeter> ].
+        ?featureVolume ro:010191 ?tumorVolumeMM.
+    }
     
     #Age
 	?ageObj roo:P100042 ?age.    
