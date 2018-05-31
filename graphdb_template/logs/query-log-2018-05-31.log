@@ -1,0 +1,389 @@
+[INFO ] 2018-05-31 11:03:46,913 [repositories/r2rml | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+DROP ALL;
+[INFO ] 2018-05-31 11:03:52,207 [repositories/r2rml | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+INSERT { _:ub1bL100C22 <http://www.w3.org/ns/r2rml#column> "sex" .
+<http://mapping.local/basicQuery> <http://www.w3.org/2008/05/skos#definition> "id,age,sex,clinical_t,clinical_n,survival_2y" .
+<http://mapping.local/disease> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL169C27 .
+_:ub1bL189C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL191C22 .
+_:ub1bL173C30 <http://www.w3.org/ns/r2rml#child> "id" .
+_:ub1bL83C22 <http://www.w3.org/ns/r2rml#parentTriplesMap> <http://mapping.local/age> .
+<http://mapping.local/patient> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL51C27 .
+_:ub1bL112C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL114C22 .
+_:ub1bL40C19 <http://www.w3.org/ns/r2rml#template> "patient/{id}" .
+_:ub1bL123C22 <http://www.w3.org/ns/r2rml#column> "age" .
+_:ub1bL81C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL83C22 .
+<http://mapping.local/patient> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL44C27 .
+<http://mapping.local/disease> <http://www.w3.org/ns/r2rml#subjectMap> _:ub1bL155C19 .
+<http://mapping.local/survival> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL142C27 .
+<http://mapping.local/patient> <http://www.w3.org/ns/r2rml#logicalTable> <http://mapping.local/basicQuery> .
+_:ub1bL206C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/local_value> .
+<http://mapping.local/clinN> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL206C27 .
+_:ub1bL155C19 <http://www.w3.org/ns/r2rml#template> "patient/{id}/disease" .
+_:ub1bL94C19 <http://www.w3.org/ns/r2rml#class> <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28421> .
+_:ub1bL73C22 <http://www.w3.org/ns/r2rml#parentTriplesMap> <http://mapping.local/survival> .
+_:ub1bL144C22 <http://www.w3.org/ns/r2rml#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:ub1bL112C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/P100028> .
+_:ub1bL46C22 <http://www.w3.org/ns/r2rml#column> "id" .
+<http://mapping.local/clinN> <http://www.w3.org/ns/r2rml#subjectMap> _:ub1bL202C19 .
+_:ub1bL173C30 <http://www.w3.org/ns/r2rml#parent> "id" .
+<http://mapping.local/patient> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL61C27 .
+<http://mapping.local/basicQuery> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/r2rml#LogicalTable> .
+<http://mapping.local/age> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/r2rml#TriplesMap> .
+_:ub1bL171C22 <http://www.w3.org/ns/r2rml#parentTriplesMap> <http://mapping.local/clinN> .
+_:ub1bL155C19 <http://www.w3.org/ns/r2rml#class> <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20> .
+_:ub1bL94C19 <http://www.w3.org/ns/r2rml#template> "patient/{id}/sex" .
+_:ub1bL51C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL53C22 .
+<http://mapping.local/basicQuery> <http://www.w3.org/ns/r2rml#sqlQuery> "SELECT PatientID as id,  ROUND(CAST(Age as decimal),0) as age, Gender as sex, Clinical_T_Stage as clinical_t, Clinical_N_Stage as clinical_n,\nSurvivalTime as survival_time,DeadStatus as vital_status, \n(CASE WHEN (CAST(SurvivalTime as decimal)>730) THEN 1 WHEN (CAST(SurvivalTime as decimal)<=730 AND DeadStatus='1') THEN 0 ELSE NULL END) AS survival_2y \nFROM PBDWHackathon2018;" .
+<http://mapping.local/survival> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/r2rml#TriplesMap> .
+<http://mapping.local/clinT> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/r2rml#TriplesMap> .
+_:ub1bL46C22 <http://www.w3.org/ns/r2rml#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+<http://mapping.local/gender> <http://www.w3.org/ns/r2rml#subjectMap> _:ub1bL94C19 .
+_:ub1bL131C19 <http://www.w3.org/ns/r2rml#template> "patient/{id}/age_unit" .
+_:ub1bL202C19 <http://www.w3.org/ns/r2rml#template> "patient/{id}/disease/cN" .
+<http://mapping.local/patient> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL71C27 .
+_:ub1bL55C30 <http://www.w3.org/ns/r2rml#child> "id" .
+_:ub1bL159C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL161C22 .
+_:ub1bL63C22 <http://www.w3.org/ns/r2rml#joinCondition> _:ub1bL65C30 .
+_:ub1bL73C22 <http://www.w3.org/ns/r2rml#joinCondition> _:ub1bL75C30 .
+<http://mapping.local/disease> <http://www.w3.org/ns/r2rml#logicalTable> <http://mapping.local/basicQuery> .
+_:ub1bL116C30 <http://www.w3.org/ns/r2rml#parent> "id" .
+_:ub1bL98C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/local_value> .
+_:ub1bL159C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/P100025> .
+_:ub1bL138C19 <http://www.w3.org/ns/r2rml#class> <http://www.cancerdata.org/roo/C100014> .
+_:ub1bL108C19 <http://www.w3.org/ns/r2rml#template> "patient/{id}/age" .
+_:ub1bL163C30 <http://www.w3.org/ns/r2rml#parent> "id" .
+_:ub1bL114C22 <http://www.w3.org/ns/r2rml#parentTriplesMap> <http://mapping.local/age_unit> .
+<http://mapping.local/age_unit> <http://www.w3.org/ns/r2rml#logicalTable> <http://mapping.local/basicQuery> .
+_:ub1bL191C22 <http://www.w3.org/ns/r2rml#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+<http://mapping.local/age> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL121C30 .
+_:ub1bL85C30 <http://www.w3.org/ns/r2rml#parent> "id" .
+_:ub1bL185C19 <http://www.w3.org/ns/r2rml#class> <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48885> .
+_:ub1bL53C22 <http://www.w3.org/ns/r2rml#joinCondition> _:ub1bL55C30 .
+_:ub1bL138C19 <http://www.w3.org/ns/r2rml#template> "patient/{id}/survival_2y" .
+<http://mapping.local/basicQuery> <http://www.w3.org/2000/01/rdf-schema#label> "Every row in this table should correspond to a unique patient.<br/>\nThe target variables have the following name and specific meaning:\nThe table should contain a unique patient identifier, age, sex, t-stage, n-stage, survival time in days and vital status at this time.<br/>\n<ul>\n<li>id: unique identifier of the patient</li>\n<li>age:  patient's age at diagnosis</li>\n<li>sex:  patient's biological sex</li>\n<li>clinical_t: clinical <strong>tumor</strong> stage</li>\n<li>clinical_n: clinical <strong>nodal</strong> stage</li>\n<li>survival_2y: two year survival </li>\n</ul>" .
+_:ub1bL131C19 <http://www.w3.org/ns/r2rml#class> <http://purl.obolibrary.org/obo/UO_0000036> .
+_:ub1bL61C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL63C22 .
+_:ub1bL208C22 <http://www.w3.org/ns/r2rml#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:ub1bL51C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/P100018> .
+_:ub1bL206C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL208C22 .
+<http://mapping.local/patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/r2rml#TriplesMap> .
+<http://mapping.local/clinT> <http://www.w3.org/ns/r2rml#subjectMap> _:ub1bL185C19 .
+_:ub1bL169C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/P100025> .
+_:ub1bL71C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL73C22 .
+_:ub1bL53C22 <http://www.w3.org/ns/r2rml#parentTriplesMap> <http://mapping.local/gender> .
+_:ub1bL185C19 <http://www.w3.org/ns/r2rml#template> "patient/{id}/disease/cT" .
+<http://mapping.local/age_unit> <http://www.w3.org/ns/r2rml#subjectMap> _:ub1bL131C19 .
+_:ub1bL169C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL171C22 .
+<http://mapping.local/survival> <http://www.w3.org/ns/r2rml#logicalTable> <http://mapping.local/basicQuery> .
+<http://mapping.local/patient> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL81C27 .
+_:ub1bL75C30 <http://www.w3.org/ns/r2rml#child> "id" .
+<http://mapping.local/age> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL112C27 .
+<http://mapping.local/gender> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/r2rml#TriplesMap> .
+_:ub1bL114C22 <http://www.w3.org/ns/r2rml#joinCondition> _:ub1bL116C30 .
+_:ub1bL44C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.w3.org/2000/01/rdf-schema#label> .
+<http://mapping.local/age> <http://www.w3.org/ns/r2rml#subjectMap> _:ub1bL108C19 .
+_:ub1bL161C22 <http://www.w3.org/ns/r2rml#parentTriplesMap> <http://mapping.local/clinT> .
+_:ub1bL61C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/P100008> .
+_:ub1bL40C19 <http://www.w3.org/ns/r2rml#class> <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16960> .
+<http://mapping.local/gender> <http://www.w3.org/ns/r2rml#logicalTable> <http://mapping.local/basicQuery> .
+<http://mapping.local/age_unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/r2rml#TriplesMap> .
+_:ub1bL123C22 <http://www.w3.org/ns/r2rml#datatype> <http://www.w3.org/2001/XMLSchema#integer> .
+_:ub1bL121C30 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL123C22 .
+<http://mapping.local/gender> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL98C27 .
+_:ub1bL81C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/P100000> .
+<http://mapping.local/clinT> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL189C27 .
+<http://mapping.local/clinT> <http://www.w3.org/ns/r2rml#logicalTable> <http://mapping.local/basicQuery> .
+_:ub1bL71C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/P100311> .
+<http://mapping.local/patient> <http://www.w3.org/ns/r2rml#subjectMap> _:ub1bL40C19 .
+_:ub1bL121C30 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/P100042> .
+<http://mapping.local/disease> <http://www.w3.org/ns/r2rml#predicateObjectMap> _:ub1bL159C27 .
+_:ub1bL144C22 <http://www.w3.org/ns/r2rml#column> "survival_2y" .
+_:ub1bL100C22 <http://www.w3.org/ns/r2rml#datatype> <http://www.w3.org/2001/XMLSchema#string> .
+_:ub1bL171C22 <http://www.w3.org/ns/r2rml#joinCondition> _:ub1bL173C30 .
+<http://mapping.local/disease> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/r2rml#TriplesMap> .
+_:ub1bL63C22 <http://www.w3.org/ns/r2rml#parentTriplesMap> <http://mapping.local/disease> .
+_:ub1bL116C30 <http://www.w3.org/ns/r2rml#child> "id" .
+_:ub1bL44C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL46C22 .
+_:ub1bL208C22 <http://www.w3.org/ns/r2rml#column> "clinical_n" .
+<http://mapping.local/clinN> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/r2rml#TriplesMap> .
+_:ub1bL83C22 <http://www.w3.org/ns/r2rml#joinCondition> _:ub1bL85C30 .
+_:ub1bL189C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/local_value> .
+_:ub1bL75C30 <http://www.w3.org/ns/r2rml#parent> "id" .
+_:ub1bL98C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL100C22 .
+_:ub1bL85C30 <http://www.w3.org/ns/r2rml#child> "id" .
+_:ub1bL65C30 <http://www.w3.org/ns/r2rml#parent> "id" .
+_:ub1bL65C30 <http://www.w3.org/ns/r2rml#child> "id" .
+<http://mapping.local/age> <http://www.w3.org/ns/r2rml#logicalTable> <http://mapping.local/basicQuery> .
+_:ub1bL142C27 <http://www.w3.org/ns/r2rml#objectMap> _:ub1bL144C22 .
+<http://mapping.local/survival> <http://www.w3.org/ns/r2rml#subjectMap> _:ub1bL138C19 .
+_:ub1bL163C30 <http://www.w3.org/ns/r2rml#child> "id" .
+_:ub1bL191C22 <http://www.w3.org/ns/r2rml#column> "clinical_t" .
+_:ub1bL202C19 <http://www.w3.org/ns/r2rml#class> <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48884> .
+<http://mapping.local/clinN> <http://www.w3.org/ns/r2rml#logicalTable> <http://mapping.local/basicQuery> .
+_:ub1bL142C27 <http://www.w3.org/ns/r2rml#predicate> <http://www.cancerdata.org/roo/local_value> .
+_:ub1bL161C22 <http://www.w3.org/ns/r2rml#joinCondition> _:ub1bL163C30 .
+_:ub1bL108C19 <http://www.w3.org/ns/r2rml#class> <http://www.cancerdata.org/roo/C100002> .
+_:ub1bL55C30 <http://www.w3.org/ns/r2rml#parent> "id" .
+
+ } WHERE { }
+[INFO ] 2018-05-31 11:04:00,474 [repositories/roo | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+DROP ALL;
+[INFO ] 2018-05-31 11:04:01,323 [repositories/roo | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+LOAD <https://raw.githubusercontent.com/RadiationOncologyOntology/ROO/master/owl/ROO.owl>;
+[WARN ] 2018-05-31 11:04:03,063 [repositories/roo | c.o.t.m.MonitorRepositoryConnection$1] exception during update execution: 
+com.ontotext.rio.ntriples.NQuadsSimpleParser$NodeParsingException: white space not allowed in uri [line 1, column 5]
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.findUriEndPos(NQuadsSimpleParser.java:340)
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.scan(NQuadsSimpleParser.java:385)
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.parse(NQuadsSimpleParser.java:229)
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.parse(NQuadsSimpleParser.java:163)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.loadInputStreamOrReader(RDFLoader.java:286)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.load(RDFLoader.java:197)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.load(RDFLoader.java:161)
+	at org.eclipse.rdf4j.repository.sail.helpers.SailUpdateExecutor.executeLoad(SailUpdateExecutor.java:172)
+	at org.eclipse.rdf4j.repository.sail.helpers.SailUpdateExecutor.executeUpdate(SailUpdateExecutor.java:124)
+	at org.eclipse.rdf4j.repository.sail.SailUpdate.execute(SailUpdate.java:64)
+	at com.ontotext.trree.monitorRepository.MonitorRepositoryConnection$1.execute(MonitorRepositoryConnection.java:344)
+	at org.eclipse.rdf4j.http.server.repository.statements.StatementsController.getSparqlUpdateResult(StatementsController.java:281)
+	at org.eclipse.rdf4j.http.server.repository.statements.StatementsController.handleRequestInternal(StatementsController.java:122)
+	at com.ontotext.graphdb.sesame.StatementsController.handleRequestInternal(StatementsController.java:26)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:146)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.ontotext.forest.core.request.RequestFilter.doFilterInternal(RequestFilter.java:41)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.github.ziplet.filter.compression.CompressingFilter.doFilter(CompressingFilter.java:300)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.ontotext.forest.security.AdminDelegatingFilterProxy.doFilter(AdminDelegatingFilterProxy.java:29)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO ] 2018-05-31 11:05:16,699 [repositories/roo | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+LOAD <https://raw.githubusercontent.com/RadiationOncologyOntology/ROO/master/owl/ROO.owl>;
+[WARN ] 2018-05-31 11:05:28,118 [repositories/roo | c.o.t.m.MonitorRepositoryConnection$1] exception during update execution: 
+java.net.UnknownHostException: raw.githubusercontent.com
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:673)
+	at sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:263)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.load(RDFLoader.java:146)
+	at org.eclipse.rdf4j.repository.sail.helpers.SailUpdateExecutor.executeLoad(SailUpdateExecutor.java:172)
+	at org.eclipse.rdf4j.repository.sail.helpers.SailUpdateExecutor.executeUpdate(SailUpdateExecutor.java:124)
+	at org.eclipse.rdf4j.repository.sail.SailUpdate.execute(SailUpdate.java:64)
+	at com.ontotext.trree.monitorRepository.MonitorRepositoryConnection$1.execute(MonitorRepositoryConnection.java:344)
+	at org.eclipse.rdf4j.http.server.repository.statements.StatementsController.getSparqlUpdateResult(StatementsController.java:281)
+	at org.eclipse.rdf4j.http.server.repository.statements.StatementsController.handleRequestInternal(StatementsController.java:122)
+	at com.ontotext.graphdb.sesame.StatementsController.handleRequestInternal(StatementsController.java:26)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:146)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.ontotext.forest.core.request.RequestFilter.doFilterInternal(RequestFilter.java:41)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.github.ziplet.filter.compression.CompressingFilter.doFilter(CompressingFilter.java:300)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.ontotext.forest.security.AdminDelegatingFilterProxy.doFilter(AdminDelegatingFilterProxy.java:29)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO ] 2018-05-31 11:07:55,204 [repositories/roo | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+DROP ALL;
+[INFO ] 2018-05-31 11:10:41,849 [repositories/roo | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+LOAD <https://raw.githubusercontent.com/RadiationOncologyOntology/ROO/master/owl/ROO.owl>;
+[WARN ] 2018-05-31 11:10:42,181 [repositories/roo | c.o.t.m.MonitorRepositoryConnection$1] exception during update execution: 
+com.ontotext.rio.ntriples.NQuadsSimpleParser$NodeParsingException: white space not allowed in uri [line 1, column 5]
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.findUriEndPos(NQuadsSimpleParser.java:340)
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.scan(NQuadsSimpleParser.java:385)
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.parse(NQuadsSimpleParser.java:229)
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.parse(NQuadsSimpleParser.java:163)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.loadInputStreamOrReader(RDFLoader.java:286)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.load(RDFLoader.java:197)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.load(RDFLoader.java:161)
+	at org.eclipse.rdf4j.repository.sail.helpers.SailUpdateExecutor.executeLoad(SailUpdateExecutor.java:172)
+	at org.eclipse.rdf4j.repository.sail.helpers.SailUpdateExecutor.executeUpdate(SailUpdateExecutor.java:124)
+	at org.eclipse.rdf4j.repository.sail.SailUpdate.execute(SailUpdate.java:64)
+	at com.ontotext.trree.monitorRepository.MonitorRepositoryConnection$1.execute(MonitorRepositoryConnection.java:344)
+	at org.eclipse.rdf4j.http.server.repository.statements.StatementsController.getSparqlUpdateResult(StatementsController.java:281)
+	at org.eclipse.rdf4j.http.server.repository.statements.StatementsController.handleRequestInternal(StatementsController.java:122)
+	at com.ontotext.graphdb.sesame.StatementsController.handleRequestInternal(StatementsController.java:26)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:146)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.ontotext.forest.core.request.RequestFilter.doFilterInternal(RequestFilter.java:41)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.github.ziplet.filter.compression.CompressingFilter.doFilter(CompressingFilter.java:300)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.ontotext.forest.security.AdminDelegatingFilterProxy.doFilter(AdminDelegatingFilterProxy.java:29)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO ] 2018-05-31 11:19:00,438 [repositories/roo | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+LOAD <https://raw.githubusercontent.com/RadiationOncologyOntology/ROO/master/owl/ROO.owl>;
+[WARN ] 2018-05-31 11:19:01,004 [repositories/roo | c.o.t.m.MonitorRepositoryConnection$1] exception during update execution: 
+com.ontotext.rio.ntriples.NQuadsSimpleParser$NodeParsingException: white space not allowed in uri [line 1, column 8]
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.findUriEndPos(NQuadsSimpleParser.java:340)
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.scan(NQuadsSimpleParser.java:385)
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.parse(NQuadsSimpleParser.java:229)
+	at com.ontotext.rio.ntriples.NQuadsSimpleParser.parse(NQuadsSimpleParser.java:163)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.loadInputStreamOrReader(RDFLoader.java:286)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.load(RDFLoader.java:197)
+	at org.eclipse.rdf4j.repository.util.RDFLoader.load(RDFLoader.java:161)
+	at org.eclipse.rdf4j.repository.sail.helpers.SailUpdateExecutor.executeLoad(SailUpdateExecutor.java:172)
+	at org.eclipse.rdf4j.repository.sail.helpers.SailUpdateExecutor.executeUpdate(SailUpdateExecutor.java:124)
+	at org.eclipse.rdf4j.repository.sail.SailUpdate.execute(SailUpdate.java:64)
+	at com.ontotext.trree.monitorRepository.MonitorRepositoryConnection$1.execute(MonitorRepositoryConnection.java:344)
+	at org.eclipse.rdf4j.http.server.repository.statements.StatementsController.getSparqlUpdateResult(StatementsController.java:281)
+	at org.eclipse.rdf4j.http.server.repository.statements.StatementsController.handleRequestInternal(StatementsController.java:122)
+	at com.ontotext.graphdb.sesame.StatementsController.handleRequestInternal(StatementsController.java:26)
+	at org.springframework.web.servlet.mvc.AbstractController.handleRequest(AbstractController.java:146)
+	at org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter.handle(SimpleControllerHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:292)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.ontotext.forest.core.request.RequestFilter.doFilterInternal(RequestFilter.java:41)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.github.ziplet.filter.compression.CompressingFilter.doFilter(CompressingFilter.java:300)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at com.ontotext.forest.security.AdminDelegatingFilterProxy.doFilter(AdminDelegatingFilterProxy.java:29)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:344)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:261)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:240)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:207)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:212)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:141)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:522)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1095)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:672)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1500)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1456)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+[INFO ] 2018-05-31 11:19:26,145 [repositories/roo | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+DROP ALL;
+[INFO ] 2018-05-31 11:31:47,353 [import-task-1-thread-1 | c.o.t.m.MonitorRepositoryConnection] Parallel mode requested but it is disabled globally. Using serial mode instead.
+[INFO ] 2018-05-31 11:46:06,907 [repositories/roo | c.o.t.m.MonitorRepositoryConnection] Incoming update:
+CLEAR ALL
+[INFO ] 2018-05-31 11:46:41,209 [import-task-1-thread-1 | c.o.t.m.MonitorRepositoryConnection] Parallel mode requested but it is disabled globally. Using serial mode instead.

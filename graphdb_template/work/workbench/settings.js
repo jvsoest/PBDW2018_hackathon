@@ -12,7 +12,29 @@
       "dateCreated" : 1526546890204
     }
   },
-  "import.url" : { },
+  "import.url" : {
+    "roo;;https://raw.githubusercontent.com/RadiationOncologyOntology/ROO/master/owl/ROO.owl" : {
+      "name" : "https://raw.githubusercontent.com/RadiationOncologyOntology/ROO/master/owl/ROO.owl",
+      "status" : "DONE",
+      "message" : "Imported successfully in 3 seconds and 361 milliseconds.",
+      "context" : null,
+      "baseURI" : null,
+      "retryTimes" : null,
+      "chunkSize" : null,
+      "parserSettings" : {
+        "preserveBNodeIds" : false,
+        "failOnUnknownDataTypes" : false,
+        "verifyDataTypeValues" : false,
+        "normalizeDataTypeValues" : false,
+        "failOnUnknownLanguageTags" : false,
+        "verifyLanguageTags" : true,
+        "normalizeLanguageTags" : false,
+        "verifyURISyntax" : true,
+        "verifyRelativeURIs" : true,
+        "stopOnError" : true
+      }
+    }
+  },
   "import.server" : { },
   "import.local" : { },
   "queries" : {
