@@ -108,7 +108,7 @@ map:age a rr:TriplesMap;
     rr:logicalTable map:basicQuery;
     rr:subjectMap [
         rr:template "patient/{id}/age";
-        rr:class roo:P100002;
+        rr:class roo:C100002;
     ];
     rr:predicateObjectMap [
         rr:predicate roo:P100028;
