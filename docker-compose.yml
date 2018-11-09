@@ -7,8 +7,6 @@ services:
     image: postgres
     environment:
       - POSTGRES_PASSWORD=postgres
-    ports:
-      - "5432:5432"
   rdf_store:
     image: jvsoest/graphdb-free:8.4.1
     ports: 
