@@ -37,6 +37,12 @@ services:
     environment:
       - RDF4J_URL=http://graphdb:7200
       - EXCLUDE_STRUCTURE_REGEX="(Patient.*|BODY.*|Body.*|NS.*|Couch.*|Isocenter.*)"
+###########################################################
+# Dummy containers already downloaded for convenience
+###########################################################
+  dummy_download_matlab_code:
+    image: jvsoest/svm_site
+###########################################################
 networks:
   default:
     driver: bridge
