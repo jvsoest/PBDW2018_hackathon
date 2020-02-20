@@ -42,8 +42,8 @@ services:
 ###########################################################
 # Dummy containers already downloaded for convenience
 ###########################################################
-  dummy_download_matlab_code:
-    image: jvsoest/svm_site
+#  dummy_download_matlab_code:
+#    image: jvsoest/svm_site
 ###########################################################
 networks:
   default:
